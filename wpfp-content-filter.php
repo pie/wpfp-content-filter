@@ -26,10 +26,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Re-add WP Favourite posts filter to dictate where the content shows
  */
 function adjust_wpfp_filters(){
-  remove_filter( 'the_content', __NAMESPACE__ . '\\wpfp_content_filter');
-  add_filter( 'the_content', 'wpfp_content_filter');
+  remove_filter( 'the_content', '\wpfp_content_filter' );
+  add_filter( 'the_content', __NAMESPACE__ . '\wpfp_content_filter' );
 }
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\adjust_wpfp_filters' );
+add_action( 'plugins_loaded', __NAMESPACE__ . '\adjust_wpfp_filters' );
 
 /**
  * Filter WP Favourite Posts content
